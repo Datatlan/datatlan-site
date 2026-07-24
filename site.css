@@ -1,0 +1,55 @@
+/*! Datatlan — site.css
+ *  Consolidated custom styles for the Datatlan marketing site.
+ *  Source of truth: github.com/Datatlan/datatlan-site  (served via jsDelivr).
+ *  Companion to site.js — behavior lives in site.js, looks live here.
+ *  Load in Webflow (Site Settings → Custom Code → Header) with:
+ *      <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Datatlan/datatlan-site@main/site.css">
+ *
+ *  Sections:
+ *    1. Contact modal — mobile bottom-sheet (≤767px)
+ */
+
+/* ====================================================================
+   1. Contact modal — mobile bottom-sheet
+   On phones, turn the centered floating card into a bottom-anchored
+   sheet: full-width, rounded top corners only, slides up on open,
+   with a drag-handle affordance and safe-area padding.
+   ==================================================================== */
+@media (max-width: 767px) {
+  .dtm-overlay {
+    align-items: flex-end;   /* anchor the card to the bottom edge */
+    padding: 0;              /* full-bleed, no side gutters */
+  }
+
+  .dtm-card {
+    width: 100%;
+    max-width: 100%;
+    border-radius: 20px 20px 0 0;                 /* top corners only */
+    max-height: 92vh;                             /* leave a sliver of dimmed overlay up top */
+    padding: 26px 20px calc(22px + env(safe-area-inset-bottom, 0px));
+    animation: dtm-sheet-up .34s cubic-bezier(.32, .72, 0, 1);
+  }
+
+  /* drag-handle pill at the top of the sheet */
+  .dtm-card::before {
+    content: "";
+    position: absolute;
+    top: 9px;
+    left: 50%;
+    width: 38px;
+    height: 4px;
+    transform: translateX(-50%);
+    border-radius: 999px;
+    background: #cbd5e1;
+  }
+}
+
+@keyframes dtm-sheet-up {
+  from { transform: translateY(100%); }
+  to   { transform: translateY(0); }
+}
+
+/* Respect users who ask for less motion — no slide, just appear. */
+@media (prefers-reduced-motion: reduce) {
+  .dtm-card { animation: none; }
+}
