@@ -76,7 +76,7 @@ if(texts.length>0)texts[0].value=inp('Nombre').value;
 if(texts.length>1)texts[1].value=inp('Empresa').value;
 if(texts.length>2)texts[texts.length-1].value=msg?msg:('Servicios: '+srv+(tls?' | Tools actuales: '+tls:''));
 function hid(name,val){var h=form.querySelector('input[type=hidden][name="'+name+'"]');if(!h){h=document.createElement('input');h.type='hidden';h.name=name;form.appendChild(h)}h.value=val}
-hid('Servicios',srv);hid('Tools',tls);
+hid('Nombre',(inp('Nombre')||{}).value||'');hid('Correo',(inp('Email')||{}).value||'');hid('Empresa',(inp('Empresa')||{}).value||'');hid('Mensaje',msg);hid('Servicios',srv);hid('Tools',tls);
 form.setAttribute('novalidate','novalidate');
 var wrap=form.closest('.w-form'),done=wrap?wrap.querySelector('.w-form-done'):null,tries=0;
 if(done)done.style.display='none';
