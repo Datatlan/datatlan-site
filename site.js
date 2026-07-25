@@ -97,12 +97,17 @@ document.querySelectorAll('a[href="#lt-contacto"]').forEach(function(a){a.addEve
 ov.addEventListener('click',function(e){if(e.target===ov)closeOv()});
 document.addEventListener('keydown',function(e){if(e.key==='Escape'){if(ov.style.display==='flex')closeOv()}});
 // Instance 2 \u2014 inline staged form in the contact section; the real Webflow form stays as the hidden data pipe.
+// Webflow's Turnstile-enabled form init can leave the form absent at DOMContentLoaded, so poll until it's present, then mount once.
+function mountInline(){
 var pipe=document.querySelector('#lt-contacto form');
 var lwrap=pipe?pipe.closest('.lt-form'):null;
-if(lwrap){
+if(!lwrap)return false;
+if(lwrap.querySelector('.dtm-inline'))return true;
 var host=document.createElement('div');host.className='dtm-inline';host.innerHTML=cardHTML(false);
 pipe.style.cssText='position:absolute;left:-9999px;top:0;width:1px;height:1px;overflow:hidden';
 lwrap.insertBefore(host,pipe);
 wireFlow(host.querySelector('.dtm-card'),null);
+return true;
 }
+if(!mountInline()){var mt=0,mi=setInterval(function(){mt++;if(mountInline()||mt>40)clearInterval(mi)},150);}
 });
