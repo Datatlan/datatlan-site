@@ -39,7 +39,9 @@
 
   var state = { name:'', type:'', email:'', cname:'', phone:'', lada:'+52', site:'', sel:{} }; // sel[id] = 'crear' | 'mejorar'
 
-  var $=function(s,c){return (c||document).querySelector(s)}, $$=function(s,c){return Array.prototype.slice.call((c||document).querySelectorAll(s))};
+  // Scope queries to the widget's own container so IDs (p.ej. #email) no choquen con el form oculto de Webflow.
+  var ROOT=document.querySelector('.dt-wrap')||document;
+  var $=function(s,c){return (c||ROOT).querySelector(s)}, $$=function(s,c){return Array.prototype.slice.call((c||ROOT).querySelectorAll(s))};
 
   // intro combobox — búsqueda de giro con texto libre
   (function initCombo(){
