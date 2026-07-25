@@ -5,12 +5,29 @@
  *  Load in Webflow (Site Settings → Custom Code → Header) with:
  *      <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Datatlan/datatlan-site@main/site.css">
  *
+ *  The staged contact flow renders in two places (same component, one hidden
+ *  Webflow form as the data pipe): as an OVERLAY popover opened by CTAs, and
+ *  INLINE inside the contact section. Overlay-only rules are scoped to
+ *  `.dtm-overlay` so the inline card stays a normal in-flow card.
+ *
  *  Sections:
- *    1. Contact modal — mobile bottom-sheet (≤767px)
+ *    1. Contact modal — progress bar clearance (overlay)
+ *    2. Contact modal — mobile bottom-sheet (overlay, ≤767px)
+ *    3. Inline staged form (contact section)
  */
 
 /* ====================================================================
-   1. Contact modal — mobile bottom-sheet
+   1. Overlay — progress bar clearance (all viewports)
+   The close (✕) is pinned top-right; without this the progress bar
+   runs underneath it. Reserve room so the bar stops before the ✕.
+   (Inline has no ✕, so this is overlay-scoped.)
+   ==================================================================== */
+.dtm-overlay .dtm-progress {
+  margin-right: 46px;
+}
+
+/* ====================================================================
+   2. Overlay — mobile bottom-sheet
    On phones, turn the centered floating card into a bottom-anchored
    sheet: full-width, rounded top corners only, slides up on open,
    with a drag-handle affordance and safe-area padding.
@@ -21,7 +38,7 @@
     padding: 0;              /* full-bleed, no side gutters */
   }
 
-  .dtm-card {
+  .dtm-overlay .dtm-card {
     width: 100%;
     max-width: 100%;
     border-radius: 20px 20px 0 0;                 /* top corners only */
@@ -31,7 +48,7 @@
   }
 
   /* drag-handle pill at the top of the sheet */
-  .dtm-card::before {
+  .dtm-overlay .dtm-card::before {
     content: "";
     position: absolute;
     top: 9px;
@@ -51,5 +68,32 @@
 
 /* Respect users who ask for less motion — no slide, just appear. */
 @media (prefers-reduced-motion: reduce) {
-  .dtm-card { animation: none; }
+  .dtm-overlay .dtm-card { animation: none; }
+}
+
+/* ====================================================================
+   3. Inline staged form (contact section)
+   The staged card sits in the contact column in place of the plain
+   Webflow form. The real form is moved off-screen by site.js and used
+   only as the submission pipe, so hide Webflow's own done/fail messages
+   (we show our own success step instead — the display toggle Webflow
+   applies is still detectable for success polling).
+   ==================================================================== */
+.dtm-inline {
+  width: 100%;
+}
+.dtm-inline .dtm-card {
+  width: 100%;
+  max-width: 100%;
+  max-height: none;
+}
+
+#lt-contacto .w-form-done,
+#lt-contacto .w-form-fail {
+  position: absolute !important;
+  left: -9999px !important;
+  top: 0 !important;
+  width: 1px !important;
+  height: 1px !important;
+  overflow: hidden !important;
 }
