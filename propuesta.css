@@ -267,4 +267,7 @@
     .dt-legend{justify-content:center}
   }
 
+  /* En /propuesta el form nativo de Webflow es solo el "tubo de datos" que llena el widget: ocultarlo. (No afecta el showcase, que no tiene .w-form.) */
+  .w-form{position:fixed !important; left:-9999px !important; top:0 !important; width:1px !important; height:1px !important; overflow:hidden !important; opacity:0 !important; pointer-events:none !important}
+
   @media (prefers-reduced-motion: reduce){ *{animation:none !important; transition:none !important} }
