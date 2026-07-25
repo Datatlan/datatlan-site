@@ -61,7 +61,8 @@
 
   /* top bar */
   .dt-top{display:flex; align-items:center; justify-content:space-between; gap:16px}
-  .dt-brand{display:flex; align-items:center; gap:10px; font-weight:750; letter-spacing:-.02em; font-size:18px}
+  .dt-brand{display:inline-flex; align-items:center; gap:10px; font-weight:750; letter-spacing:-.02em; font-size:18px; color:var(--ink); text-decoration:none; cursor:pointer; transition:opacity .15s var(--ease)}
+  .dt-brand:hover{opacity:.72}
   .dt-logo{width:30px; height:30px; flex:none}
   .dt-steps{display:flex; align-items:center; gap:7px}
   .dt-steps span{width:26px; height:5px; border-radius:9px; background:var(--line); transition:.4s var(--ease)}
@@ -245,7 +246,12 @@
   .dt-legend i{width:9px; height:9px; border-radius:3px; display:inline-block}
   .dt-legend i.crear{background:var(--azul)} .dt-legend i.mejorar{background:var(--teal)}
 
-  .dt-footer{text-align:center; font-size:12px; color:var(--slate); margin-top:6px}
+  .dt-footer{display:flex; flex-direction:column; align-items:center; gap:6px; text-align:center; font-size:12.5px; color:var(--slate); margin-top:8px}
+  .dt-footer-links{display:flex; flex-wrap:wrap; align-items:center; justify-content:center; gap:9px}
+  .dt-footer a{color:var(--azul-ink); text-decoration:none; font-weight:600}
+  .dt-footer a:hover{text-decoration:underline}
+  .dt-footer .dt-dot{color:var(--line)}
+  .dt-footer p{margin:0}
   .dt-footer b{color:var(--ink-soft); font-weight:700}
 
   /* ---- mobile polish ---- */
