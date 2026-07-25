@@ -93,7 +93,7 @@ var ov=document.createElement('div');ov.className='dtm-overlay';ov.id='dtm';ov.i
 function closeOv(){ov.style.display='none';document.body.style.overflow=''}
 var ovFlow=wireFlow(ov.querySelector('.dtm-card'),closeOv);
 function openOv(){ov.style.display='flex';document.body.style.overflow='hidden';ovFlow.show(0)}
-document.querySelectorAll('a[href="#lt-contacto"]').forEach(function(a){a.addEventListener('click',function(e){e.preventDefault();openOv()})});
+document.querySelectorAll('a[href="#lt-contacto"]:not([data-cal-link])').forEach(function(a){a.addEventListener('click',function(e){e.preventDefault();openOv()})});
 ov.addEventListener('click',function(e){if(e.target===ov)closeOv()});
 document.addEventListener('keydown',function(e){if(e.key==='Escape'){if(ov.style.display==='flex')closeOv()}});
 // Instance 2 \u2014 inline staged form in the contact section; the real Webflow form stays as the hidden data pipe.
