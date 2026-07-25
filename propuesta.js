@@ -286,6 +286,8 @@
     if(!root||root.getAttribute("data-dt-mounted"))return;
     root.setAttribute("data-dt-mounted","1");
     root.innerHTML=MARKUP;
+    var wf=document.querySelector(".w-form");
+    if(wf){wf.style.cssText="position:fixed;left:-9999px;top:0;width:1px;height:1px;overflow:hidden;opacity:0;pointer-events:none";}
     app();
   }
   if(document.readyState!=="loading")boot();else document.addEventListener("DOMContentLoaded",boot);
