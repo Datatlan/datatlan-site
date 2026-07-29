@@ -2,7 +2,7 @@
    Auto-monta en <div id="dt-propuesta"></div>. Servido por jsDelivr.
    Generado desde datatlan-business/propuesta-showcase.html (build-widget.js). No editar a mano. */
 (function(){
-  var MARKUP = "<div class=\"dt-wrap\">\n  <div class=\"dt-app\">\n    <div class=\"dt-top\">\n      <a class=\"dt-brand\" href=\"/\" aria-label=\"Volver a datatlan.tech\">\n        <svg class=\"dt-logo\" viewBox=\"0 0 120 120\" fill=\"none\" aria-hidden=\"true\">\n          <!-- central spine -->\n          <rect x=\"54\" y=\"30\" width=\"12\" height=\"82\" rx=\"4\" fill=\"#1f86cf\"/>\n          <!-- row 5 (base, deep blue) -->\n          <rect x=\"12\" y=\"93\" width=\"40\" height=\"19\" rx=\"4\" fill=\"#1450ad\"/>\n          <rect x=\"68\" y=\"93\" width=\"40\" height=\"19\" rx=\"4\" fill=\"#1450ad\"/>\n          <!-- row 4 -->\n          <rect x=\"18\" y=\"72\" width=\"34\" height=\"17\" rx=\"4\" fill=\"#1663bd\"/>\n          <rect x=\"68\" y=\"72\" width=\"34\" height=\"17\" rx=\"4\" fill=\"#1663bd\"/>\n          <!-- row 3 -->\n          <rect x=\"24\" y=\"51\" width=\"28\" height=\"17\" rx=\"4\" fill=\"#1c7dc6\"/>\n          <rect x=\"68\" y=\"51\" width=\"28\" height=\"17\" rx=\"4\" fill=\"#1c7dc6\"/>\n          <!-- row 2 -->\n          <rect x=\"30\" y=\"30\" width=\"22\" height=\"17\" rx=\"4\" fill=\"#1f93cf\"/>\n          <rect x=\"68\" y=\"30\" width=\"22\" height=\"17\" rx=\"4\" fill=\"#1f93cf\"/>\n          <!-- row 1 (browser header, cyan) -->\n          <rect x=\"34\" y=\"8\" width=\"52\" height=\"18\" rx=\"5\" fill=\"#12b0d6\"/>\n          <circle cx=\"43\" cy=\"17\" r=\"1.9\" fill=\"#fff\"/>\n          <circle cx=\"49.5\" cy=\"17\" r=\"1.9\" fill=\"#fff\"/>\n          <circle cx=\"56\" cy=\"17\" r=\"1.9\" fill=\"#fff\"/>\n          <rect x=\"64\" y=\"14.4\" width=\"16\" height=\"5.2\" rx=\"2.6\" fill=\"#fff\"/>\n        </svg>\n        <span>Datatlan</span>\n      </a>\n      <div class=\"dt-steps\" aria-hidden=\"true\">\n        <span id=\"s0\" class=\"on\"></span><span id=\"s1\"></span><span id=\"s2\"></span>\n      </div>\n    </div>\n\n    <!-- SCREEN 0 — intro -->\n    <section class=\"dt-screen active\" id=\"scr-0\">\n      <div class=\"dt-card\">\n        <p class=\"dt-eyebrow\">Propuesta personalizada</p>\n        <h1 class=\"dt-h\">Armemos la digitalización de tu negocio</h1>\n        <p class=\"dt-sub\">Marca los frentes que quieres poner en marcha. En un par de minutos armas tu paquete, y Datatlan te devuelve un diagnóstico con una cotización a la medida.</p>\n\n        <div class=\"dt-field\">\n          <label class=\"dt-label\" for=\"bizname\">¿Cómo se llama tu negocio? <span class=\"req\">*</span></label>\n          <input class=\"dt-input\" id=\"bizname\" type=\"text\" placeholder=\"Ej. Estudio Luna, Nutrióloga Ana, Guardería Girasol\" autocomplete=\"off\">\n        </div>\n        <div class=\"dt-field\">\n          <label class=\"dt-label\" for=\"biz-search\">¿A qué se dedica? <span class=\"req\">*</span></label>\n          <div class=\"dt-combo\" id=\"combo\">\n            <input class=\"dt-input\" id=\"biz-search\" type=\"text\" autocomplete=\"off\" placeholder=\"Escribe tu giro… ej. yoga, nutrición, cafetería\" role=\"combobox\" aria-expanded=\"false\" aria-controls=\"biz-list\" aria-autocomplete=\"list\">\n            <div class=\"dt-clist\" id=\"biz-list\" role=\"listbox\" aria-label=\"Giros sugeridos\"></div>\n          </div>\n          <p class=\"dt-hint\" id=\"biz-hint\"></p>\n        </div>\n\n        <p class=\"dt-err\" id=\"intro-err\">Completa el nombre de tu negocio y tu giro para continuar.</p>\n\n        <div class=\"dt-foot\" style=\"justify-content:flex-end\">\n          <button class=\"dt-btn\" id=\"go-1\" type=\"button\">Comenzar\n            <svg viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.4\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M5 12h14M13 6l6 6-6 6\"/></svg>\n          </button>\n        </div>\n      </div>\n    </section>\n\n    <!-- SCREEN 1 — selección -->\n    <section class=\"dt-screen\" id=\"scr-1\">\n      <div class=\"dt-card\">\n        <p class=\"dt-eyebrow\">Paso 1 de 3 · Elige tus frentes</p>\n        <h1 class=\"dt-h\">¿Qué quieres digitalizar?</h1>\n        <p class=\"dt-sub\">Toca los frentes que te interesan. En cada uno dinos si lo <b style=\"color:var(--azul-ink)\">creamos desde cero</b> o <b style=\"color:var(--teal-ink)\">mejoramos</b> lo que ya tienes.</p>\n\n        <div class=\"dt-grid\" id=\"grid\"></div>\n\n        <div class=\"dt-legend\" aria-hidden=\"true\">\n          <span><i class=\"crear\"></i> Crear desde cero</span>\n          <span><i class=\"mejorar\"></i> Mejorar lo existente</span>\n        </div>\n\n        <div class=\"dt-foot\">\n          <div class=\"dt-count\" id=\"count\">Aún no eliges frentes</div>\n          <div class=\"dt-actions\">\n            <button class=\"dt-btn ghost\" id=\"back-0\" type=\"button\">Atrás</button>\n            <button class=\"dt-btn\" id=\"go-2\" type=\"button\" disabled>Ver mi paquete\n              <svg viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.4\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M5 12h14M13 6l6 6-6 6\"/></svg>\n            </button>\n          </div>\n        </div>\n      </div>\n    </section>\n\n    <!-- SCREEN 2 — paquete -->\n    <section class=\"dt-screen\" id=\"scr-2\">\n      <div class=\"dt-card\">\n        <p class=\"dt-eyebrow\">Paso 2 de 3 · Tu paquete</p>\n        <h1 class=\"dt-h\" id=\"pkg-title\">Tu paquete de arranque</h1>\n        <p class=\"dt-sub\">Esto es lo que Datatlan pondría en marcha. Nosotros hacemos el diagnóstico y te enviamos la cotización personalizada — sin precios ocultos.</p>\n\n        <div class=\"dt-pkg\">\n          <div id=\"pkg-list\"></div>\n\n          <aside class=\"dt-aside\">\n            <div class=\"dt-stackbox\">\n              <svg class=\"dt-stack\" id=\"stack\" viewBox=\"0 0 240 180\" aria-hidden=\"true\"></svg>\n              <div class=\"dt-metrics\">\n                <div class=\"dt-metric\"><b id=\"m-total\">0</b><span>frentes</span></div>\n                <div class=\"dt-metric\"><b id=\"m-crear\" style=\"color:var(--azul-ink)\">0</b><span>crear</span></div>\n                <div class=\"dt-metric\"><b id=\"m-mejorar\" style=\"color:var(--teal-ink)\">0</b><span>mejorar</span></div>\n              </div>\n            </div>\n            <div class=\"dt-note\">\n              <svg viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M12 8v4l3 2\"/><circle cx=\"12\" cy=\"12\" r=\"9\"/></svg>\n              <div><b>Respuesta en menos de 24 h hábiles.</b> Revisamos tu selección, hacemos el diagnóstico y te mandamos una cotización clara y a la medida.</div>\n            </div>\n          </aside>\n        </div>\n\n        <div class=\"dt-field\">\n          <label class=\"dt-label\" for=\"cname\">Tu nombre <span class=\"req\">*</span></label>\n          <input class=\"dt-input\" id=\"cname\" type=\"text\" placeholder=\"¿Con quién tenemos el gusto?\" autocomplete=\"name\">\n        </div>\n        <div class=\"dt-field\">\n          <label class=\"dt-label\" for=\"email\">Correo <span class=\"req\">*</span></label>\n          <input class=\"dt-input\" id=\"email\" type=\"email\" placeholder=\"tu@correo.com\" autocomplete=\"email\">\n        </div>\n        <div class=\"dt-field\">\n          <label class=\"dt-label\" for=\"phone\">Teléfono <span class=\"opt\">— opcional</span></label>\n          <div class=\"dt-phone\">\n            <input class=\"dt-input dt-lada\" id=\"lada\" type=\"tel\" inputmode=\"tel\" value=\"+52\" placeholder=\"+52\" aria-label=\"Lada / código de país\">\n            <input class=\"dt-input dt-tel\" id=\"phone\" type=\"tel\" inputmode=\"tel\" placeholder=\"55 1234 5678\" autocomplete=\"tel\">\n          </div>\n        </div>\n        <div class=\"dt-field\">\n          <label class=\"dt-label\" for=\"site\">Sitio web o redes <span class=\"opt\">— opcional</span></label>\n          <input class=\"dt-input\" id=\"site\" type=\"text\" inputmode=\"url\" placeholder=\"tusitio.com o @tu_negocio\" autocomplete=\"url\">\n        </div>\n        <p class=\"dt-err\" id=\"pkg-err\">Completa los campos obligatorios.</p>\n\n        <div class=\"dt-foot\">\n          <button class=\"dt-btn ghost\" id=\"back-1\" type=\"button\">Editar selección</button>\n          <button class=\"dt-btn\" id=\"go-3\" type=\"button\">Solicitar mi cotización\n            <svg viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.4\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M5 12h14M13 6l6 6-6 6\"/></svg>\n          </button>\n        </div>\n      </div>\n    </section>\n\n    <!-- SCREEN 3 — confirmación -->\n    <section class=\"dt-screen\" id=\"scr-3\">\n      <div class=\"dt-card dt-confirm\">\n        <div class=\"dt-seal\"><svg viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.6\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M20 6L9 17l-5-5\"/></svg></div>\n        <p class=\"dt-eyebrow\" style=\"color:var(--teal-ink)\">Solicitud recibida</p>\n        <h1 class=\"dt-h\" id=\"done-title\">¡Listo! Estamos preparando tu diagnóstico</h1>\n        <p class=\"dt-sub\" style=\"margin-left:auto;margin-right:auto\" id=\"done-sub\">Datatlan revisará tus frentes y te enviará una cotización personalizada muy pronto.</p>\n        <div class=\"dt-recap\" id=\"recap\"></div>\n        <div class=\"dt-foot\" style=\"justify-content:center; margin-top:26px\">\n          <button class=\"dt-btn ghost\" id=\"restart\" type=\"button\">Empezar de nuevo</button>\n        </div>\n      </div>\n    </section>\n\n    <div class=\"dt-footer\">\n      <div class=\"dt-footer-links\">\n        <a href=\"/\">← Volver a datatlan.tech</a>\n        <span class=\"dt-dot\">·</span>\n        <a href=\"mailto:datatlan@datatlan.tech\">datatlan@datatlan.tech</a>\n      </div>\n      <p><b>Datatlan</b> — Ecosistema Digital para tu Empresa</p>\n    </div>\n  </div>\n</div>";
+  var MARKUP = "<div class=\"dt-wrap\">\n  <div class=\"dt-app\">\n    <div class=\"dt-top\">\n      <a class=\"dt-brand\" href=\"/\" aria-label=\"Volver a datatlan.tech\" data-i18n-aria=\"brandAria\">\n        <svg class=\"dt-logo\" viewBox=\"0 0 120 120\" fill=\"none\" aria-hidden=\"true\">\n          <!-- central spine -->\n          <rect x=\"54\" y=\"30\" width=\"12\" height=\"82\" rx=\"4\" fill=\"#1f86cf\"/>\n          <!-- row 5 (base, deep blue) -->\n          <rect x=\"12\" y=\"93\" width=\"40\" height=\"19\" rx=\"4\" fill=\"#1450ad\"/>\n          <rect x=\"68\" y=\"93\" width=\"40\" height=\"19\" rx=\"4\" fill=\"#1450ad\"/>\n          <!-- row 4 -->\n          <rect x=\"18\" y=\"72\" width=\"34\" height=\"17\" rx=\"4\" fill=\"#1663bd\"/>\n          <rect x=\"68\" y=\"72\" width=\"34\" height=\"17\" rx=\"4\" fill=\"#1663bd\"/>\n          <!-- row 3 -->\n          <rect x=\"24\" y=\"51\" width=\"28\" height=\"17\" rx=\"4\" fill=\"#1c7dc6\"/>\n          <rect x=\"68\" y=\"51\" width=\"28\" height=\"17\" rx=\"4\" fill=\"#1c7dc6\"/>\n          <!-- row 2 -->\n          <rect x=\"30\" y=\"30\" width=\"22\" height=\"17\" rx=\"4\" fill=\"#1f93cf\"/>\n          <rect x=\"68\" y=\"30\" width=\"22\" height=\"17\" rx=\"4\" fill=\"#1f93cf\"/>\n          <!-- row 1 (browser header, cyan) -->\n          <rect x=\"34\" y=\"8\" width=\"52\" height=\"18\" rx=\"5\" fill=\"#12b0d6\"/>\n          <circle cx=\"43\" cy=\"17\" r=\"1.9\" fill=\"#fff\"/>\n          <circle cx=\"49.5\" cy=\"17\" r=\"1.9\" fill=\"#fff\"/>\n          <circle cx=\"56\" cy=\"17\" r=\"1.9\" fill=\"#fff\"/>\n          <rect x=\"64\" y=\"14.4\" width=\"16\" height=\"5.2\" rx=\"2.6\" fill=\"#fff\"/>\n        </svg>\n        <span>Datatlan</span>\n      </a>\n      <div class=\"dt-steps\" aria-hidden=\"true\">\n        <span id=\"s0\" class=\"on\"></span><span id=\"s1\"></span><span id=\"s2\"></span>\n      </div>\n    </div>\n\n    <!-- SCREEN 0 — intro -->\n    <section class=\"dt-screen active\" id=\"scr-0\">\n      <div class=\"dt-card\">\n        <p class=\"dt-eyebrow\" data-i18n=\"s0_eyebrow\">Propuesta personalizada</p>\n        <h1 class=\"dt-h\" data-i18n=\"s0_h\">Armemos la digitalización de tu negocio</h1>\n        <p class=\"dt-sub\" data-i18n=\"s0_sub\">Marca los frentes que quieres poner en marcha. En un par de minutos armas tu paquete, y Datatlan te devuelve un diagnóstico con una cotización a la medida.</p>\n\n        <div class=\"dt-field\">\n          <label class=\"dt-label\" for=\"bizname\" data-i18n-html=\"lbl_bizname\">¿Cómo se llama tu negocio? <span class=\"req\">*</span></label>\n          <input class=\"dt-input\" id=\"bizname\" type=\"text\" placeholder=\"Ej. Estudio Luna, Nutrióloga Ana, Guardería Girasol\" data-i18n-ph=\"ph_bizname\" autocomplete=\"off\">\n        </div>\n        <div class=\"dt-field\">\n          <label class=\"dt-label\" for=\"biz-search\" data-i18n-html=\"lbl_bizsearch\">¿A qué se dedica? <span class=\"req\">*</span></label>\n          <div class=\"dt-combo\" id=\"combo\">\n            <input class=\"dt-input\" id=\"biz-search\" type=\"text\" autocomplete=\"off\" placeholder=\"Escribe tu giro… ej. yoga, nutrición, cafetería\" data-i18n-ph=\"ph_bizsearch\" role=\"combobox\" aria-expanded=\"false\" aria-controls=\"biz-list\" aria-autocomplete=\"list\">\n            <div class=\"dt-clist\" id=\"biz-list\" role=\"listbox\" aria-label=\"Giros sugeridos\" data-i18n-aria=\"listAria\"></div>\n          </div>\n          <p class=\"dt-hint\" id=\"biz-hint\"></p>\n        </div>\n\n        <p class=\"dt-err\" id=\"intro-err\" data-i18n=\"err_intro\">Completa el nombre de tu negocio y tu giro para continuar.</p>\n\n        <div class=\"dt-foot\" style=\"justify-content:flex-end\">\n          <button class=\"dt-btn\" id=\"go-1\" type=\"button\"><span data-i18n=\"btn_start\">Comenzar</span>\n            <svg viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.4\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M5 12h14M13 6l6 6-6 6\"/></svg>\n          </button>\n        </div>\n      </div>\n    </section>\n\n    <!-- SCREEN 1 — selección -->\n    <section class=\"dt-screen\" id=\"scr-1\">\n      <div class=\"dt-card\">\n        <p class=\"dt-eyebrow\" data-i18n=\"s1_eyebrow\">Paso 1 de 3 · Elige tus frentes</p>\n        <h1 class=\"dt-h\" data-i18n=\"s1_h\">¿Qué quieres digitalizar?</h1>\n        <p class=\"dt-sub\" data-i18n-html=\"s1_sub\">Toca los frentes que te interesan. En cada uno dinos si lo <b style=\"color:var(--azul-ink)\">creamos desde cero</b> o <b style=\"color:var(--teal-ink)\">mejoramos</b> lo que ya tienes.</p>\n\n        <div class=\"dt-grid\" id=\"grid\"></div>\n\n        <div class=\"dt-legend\" aria-hidden=\"true\">\n          <span><i class=\"crear\"></i> <span data-i18n=\"leg_create\">Crear desde cero</span></span>\n          <span><i class=\"mejorar\"></i> <span data-i18n=\"leg_improve\">Mejorar lo existente</span></span>\n        </div>\n\n        <div class=\"dt-foot\">\n          <div class=\"dt-count\" id=\"count\">Aún no eliges frentes</div>\n          <div class=\"dt-actions\">\n            <button class=\"dt-btn ghost\" id=\"back-0\" type=\"button\" data-i18n=\"btn_back\">Atrás</button>\n            <button class=\"dt-btn\" id=\"go-2\" type=\"button\" disabled><span data-i18n=\"btn_seepkg\">Ver mi paquete</span>\n              <svg viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.4\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M5 12h14M13 6l6 6-6 6\"/></svg>\n            </button>\n          </div>\n        </div>\n      </div>\n    </section>\n\n    <!-- SCREEN 2 — paquete -->\n    <section class=\"dt-screen\" id=\"scr-2\">\n      <div class=\"dt-card\">\n        <p class=\"dt-eyebrow\" data-i18n=\"s2_eyebrow\">Paso 2 de 3 · Tu paquete</p>\n        <h1 class=\"dt-h\" id=\"pkg-title\">Tu paquete de arranque</h1>\n        <p class=\"dt-sub\" data-i18n=\"s2_sub\">Esto es lo que Datatlan pondría en marcha. Nosotros hacemos el diagnóstico y te enviamos la cotización personalizada — sin precios ocultos.</p>\n\n        <div class=\"dt-pkg\">\n          <div id=\"pkg-list\"></div>\n\n          <aside class=\"dt-aside\">\n            <div class=\"dt-stackbox\">\n              <svg class=\"dt-stack\" id=\"stack\" viewBox=\"0 0 240 180\" aria-hidden=\"true\"></svg>\n              <div class=\"dt-metrics\">\n                <div class=\"dt-metric\"><b id=\"m-total\">0</b><span data-i18n=\"m_areas\">frentes</span></div>\n                <div class=\"dt-metric\"><b id=\"m-crear\" style=\"color:var(--azul-ink)\">0</b><span data-i18n=\"m_create\">crear</span></div>\n                <div class=\"dt-metric\"><b id=\"m-mejorar\" style=\"color:var(--teal-ink)\">0</b><span data-i18n=\"m_improve\">mejorar</span></div>\n              </div>\n            </div>\n            <div class=\"dt-note\">\n              <svg viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M12 8v4l3 2\"/><circle cx=\"12\" cy=\"12\" r=\"9\"/></svg>\n              <div data-i18n-html=\"s2_note\"><b>Respuesta en menos de 24 h hábiles.</b> Revisamos tu selección, hacemos el diagnóstico y te mandamos una cotización clara y a la medida.</div>\n            </div>\n          </aside>\n        </div>\n\n        <div class=\"dt-field\">\n          <label class=\"dt-label\" for=\"cname\" data-i18n-html=\"lbl_cname\">Tu nombre <span class=\"req\">*</span></label>\n          <input class=\"dt-input\" id=\"cname\" type=\"text\" placeholder=\"¿Con quién tenemos el gusto?\" data-i18n-ph=\"ph_cname\" autocomplete=\"name\">\n        </div>\n        <div class=\"dt-field\">\n          <label class=\"dt-label\" for=\"email\" data-i18n-html=\"lbl_email\">Correo <span class=\"req\">*</span></label>\n          <input class=\"dt-input\" id=\"email\" type=\"email\" placeholder=\"tu@correo.com\" data-i18n-ph=\"ph_email\" autocomplete=\"email\">\n        </div>\n        <div class=\"dt-field\">\n          <label class=\"dt-label\" for=\"phone\" data-i18n-html=\"lbl_phone\">Teléfono <span class=\"opt\">— opcional</span></label>\n          <div class=\"dt-phone\">\n            <input class=\"dt-input dt-lada\" id=\"lada\" type=\"tel\" inputmode=\"tel\" value=\"+52\" placeholder=\"+52\" aria-label=\"Lada / código de país\" data-i18n-aria=\"ladaAria\">\n            <input class=\"dt-input dt-tel\" id=\"phone\" type=\"tel\" inputmode=\"tel\" placeholder=\"55 1234 5678\" autocomplete=\"tel\">\n          </div>\n        </div>\n        <div class=\"dt-field\">\n          <label class=\"dt-label\" for=\"site\" data-i18n-html=\"lbl_site\">Sitio web o redes <span class=\"opt\">— opcional</span></label>\n          <input class=\"dt-input\" id=\"site\" type=\"text\" inputmode=\"url\" placeholder=\"tusitio.com o @tu_negocio\" data-i18n-ph=\"ph_site\" autocomplete=\"url\">\n        </div>\n        <p class=\"dt-err\" id=\"pkg-err\">Completa los campos obligatorios.</p>\n\n        <div class=\"dt-foot\">\n          <button class=\"dt-btn ghost\" id=\"back-1\" type=\"button\" data-i18n=\"btn_edit\">Editar selección</button>\n          <button class=\"dt-btn\" id=\"go-3\" type=\"button\"><span data-i18n=\"btn_request\">Solicitar mi cotización</span>\n            <svg viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.4\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M5 12h14M13 6l6 6-6 6\"/></svg>\n          </button>\n        </div>\n      </div>\n    </section>\n\n    <!-- SCREEN 3 — confirmación -->\n    <section class=\"dt-screen\" id=\"scr-3\">\n      <div class=\"dt-card dt-confirm\">\n        <div class=\"dt-seal\"><svg viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.6\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M20 6L9 17l-5-5\"/></svg></div>\n        <p class=\"dt-eyebrow\" style=\"color:var(--teal-ink)\" data-i18n=\"s3_eyebrow\">Solicitud recibida</p>\n        <h1 class=\"dt-h\" id=\"done-title\">¡Listo! Estamos preparando tu diagnóstico</h1>\n        <p class=\"dt-sub\" style=\"margin-left:auto;margin-right:auto\" id=\"done-sub\">Datatlan revisará tus frentes y te enviará una cotización personalizada muy pronto.</p>\n        <div class=\"dt-recap\" id=\"recap\"></div>\n        <div class=\"dt-foot\" style=\"justify-content:center; margin-top:26px\">\n          <button class=\"dt-btn ghost\" id=\"restart\" type=\"button\" data-i18n=\"btn_restart\">Empezar de nuevo</button>\n        </div>\n      </div>\n    </section>\n\n    <div class=\"dt-footer\">\n      <div class=\"dt-footer-links\">\n        <a href=\"/\" data-i18n=\"foot_back\">← Volver a datatlan.tech</a>\n        <span class=\"dt-dot\">·</span>\n        <a href=\"mailto:datatlan@datatlan.tech\">datatlan@datatlan.tech</a>\n      </div>\n      <p data-i18n-html=\"foot_tag\"><b>Datatlan</b> — Ecosistema Digital para tu Empresa</p>\n    </div>\n  </div>\n</div>";
   function app(){
   var I = {
     sitio:'<path d="M3 5h18v14H3z"/><path d="M3 9h18"/><circle cx="6" cy="7" r=".6" fill="currentColor"/>',
@@ -17,24 +17,24 @@
   function svg(p){return '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">'+p+'</svg>';}
 
   var ASPECTS = [
-    {id:'sitio', name:'Sitio web', desc:'Tu casa digital, editable por ti.', group:'nucleo', icon:I.sitio},
-    {id:'marca', name:'Identidad de marca', desc:'Logo, colores, cómo te ven.', group:'nucleo', icon:I.marca},
-    {id:'reservas', name:'Reservas y citas', desc:'Que te agenden sin ir y venir por WhatsApp.', group:'modulo', icon:I.reservas},
-    {id:'pagos', name:'Cobros y pagos', desc:'Cobra en línea, sin complicarte.', group:'modulo', icon:I.pagos},
-    {id:'catalogo', name:'Catálogo / tienda', desc:'Muestra tus servicios o vende en línea.', group:'modulo', icon:I.catalogo},
-    {id:'clientes', name:'Clientes y correo', desc:'Guarda contactos y da seguimiento.', group:'modulo', icon:I.clientes},
-    {id:'operacion', name:'Operación interna', desc:'Ordena tareas, inventario y procesos en un solo lugar.', group:'modulo', icon:I.operacion},
-    {id:'medicion', name:'Medición', desc:'Sabe qué está funcionando y qué no.', group:'modulo', icon:I.medicion}
+    {id:'sitio', name:'Sitio web', name_en:'Website', desc:'Tu casa digital, editable por ti.', desc_en:'Your digital home, editable by you.', group:'nucleo', icon:I.sitio},
+    {id:'marca', name:'Identidad de marca', name_en:'Brand identity', desc:'Logo, colores, cómo te ven.', desc_en:'Logo, colors, how people see you.', group:'nucleo', icon:I.marca},
+    {id:'reservas', name:'Reservas y citas', name_en:'Bookings & appointments', desc:'Que te agenden sin ir y venir por WhatsApp.', desc_en:'Let people book you without the WhatsApp back-and-forth.', group:'modulo', icon:I.reservas},
+    {id:'pagos', name:'Cobros y pagos', name_en:'Payments & billing', desc:'Cobra en línea, sin complicarte.', desc_en:'Get paid online, hassle-free.', group:'modulo', icon:I.pagos},
+    {id:'catalogo', name:'Catálogo / tienda', name_en:'Catalog / store', desc:'Muestra tus servicios o vende en línea.', desc_en:'Show your services or sell online.', group:'modulo', icon:I.catalogo},
+    {id:'clientes', name:'Clientes y correo', name_en:'Clients & email', desc:'Guarda contactos y da seguimiento.', desc_en:'Store contacts and follow up.', group:'modulo', icon:I.clientes},
+    {id:'operacion', name:'Operación interna', name_en:'Internal operations', desc:'Ordena tareas, inventario y procesos en un solo lugar.', desc_en:'Organize tasks, inventory, and processes in one place.', group:'modulo', icon:I.operacion},
+    {id:'medicion', name:'Medición', name_en:'Analytics', desc:'Sabe qué está funcionando y qué no.', desc_en:"Know what's working and what's not.", group:'modulo', icon:I.medicion}
   ];
   var CATS = [
-    {label:'Bienestar y movimiento', kw:['yoga','pilates','gym','gimnasio','crossfit','danza','baile','fitness','entrenador','spinning','zumba','meditacion']},
-    {label:'Salud y terapia', kw:['nutricion','nutriologo','psicologia','psicologo','terapia','terapeuta','fisioterapia','masaje','consultorio','dental','dentista','medico','doctor','veterinaria']},
-    {label:'Belleza y cuidado personal', kw:['estetica','spa','barberia','salon','peluqueria','uñas','unas','cejas','pestañas','maquillaje','depilacion','tatuajes']},
-    {label:'Educación y cuidado infantil', kw:['guarderia','kinder','preescolar','clases','tutoria','escuela','taller','cursos','idiomas','musica','regularizacion','estancia infantil']},
-    {label:'Alimentos y bebidas', kw:['cafe','cafeteria','restaurante','reposteria','pasteleria','panaderia','catering','comida','bar','postres','taqueria','food truck']},
-    {label:'Comercio y productos', kw:['tienda','boutique','artesanias','ecommerce','venta','productos','ropa','accesorios','joyeria','floreria','abarrotes']},
-    {label:'Servicios profesionales', kw:['consultoria','coaching','despacho','contabilidad','contador','legal','abogado','marketing','diseño','diseno','arquitectura','agencia']},
-    {label:'Eventos y creativos', kw:['fotografia','fotografo','video','eventos','decoracion','dj','bodas','wedding','organizacion','audiovisual']}
+    {label:'Bienestar y movimiento', label_en:'Wellness & movement', kw:['yoga','pilates','gym','gimnasio','crossfit','danza','baile','fitness','entrenador','spinning','zumba','meditacion'], kw_en:['yoga','pilates','gym','fitness','crossfit','dance','trainer','spinning','zumba','meditation']},
+    {label:'Salud y terapia', label_en:'Health & therapy', kw:['nutricion','nutriologo','psicologia','psicologo','terapia','terapeuta','fisioterapia','masaje','consultorio','dental','dentista','medico','doctor','veterinaria'], kw_en:['nutrition','nutritionist','psychology','psychologist','therapy','therapist','physiotherapy','massage','clinic','dental','dentist','doctor','vet','veterinary']},
+    {label:'Belleza y cuidado personal', label_en:'Beauty & personal care', kw:['estetica','spa','barberia','salon','peluqueria','uñas','unas','cejas','pestañas','maquillaje','depilacion','tatuajes'], kw_en:['beauty','spa','barber','salon','hair','nails','brows','lashes','makeup','waxing','tattoo']},
+    {label:'Educación y cuidado infantil', label_en:'Education & childcare', kw:['guarderia','kinder','preescolar','clases','tutoria','escuela','taller','cursos','idiomas','musica','regularizacion','estancia infantil'], kw_en:['daycare','kindergarten','preschool','classes','tutoring','school','workshop','courses','languages','music']},
+    {label:'Alimentos y bebidas', label_en:'Food & drink', kw:['cafe','cafeteria','restaurante','reposteria','pasteleria','panaderia','catering','comida','bar','postres','taqueria','food truck'], kw_en:['cafe','coffee','restaurant','bakery','pastry','catering','food','bar','desserts','tacos','food truck']},
+    {label:'Comercio y productos', label_en:'Retail & products', kw:['tienda','boutique','artesanias','ecommerce','venta','productos','ropa','accesorios','joyeria','floreria','abarrotes'], kw_en:['store','shop','boutique','crafts','ecommerce','sales','products','clothing','accessories','jewelry','flowers','grocery']},
+    {label:'Servicios profesionales', label_en:'Professional services', kw:['consultoria','coaching','despacho','contabilidad','contador','legal','abogado','marketing','diseño','diseno','arquitectura','agencia'], kw_en:['consulting','coaching','firm','accounting','accountant','legal','lawyer','marketing','design','architecture','agency']},
+    {label:'Eventos y creativos', label_en:'Events & creative', kw:['fotografia','fotografo','video','eventos','decoracion','dj','bodas','wedding','organizacion','audiovisual'], kw_en:['photography','photographer','video','events','decor','dj','weddings','planning','audiovisual']}
   ];
 
   var state = { name:'', type:'', email:'', cname:'', phone:'', lada:'+52', site:'', sel:{} }; // sel[id] = 'crear' | 'mejorar'
@@ -43,6 +43,63 @@
   var ROOT=document.querySelector('.dt-wrap')||document;
   var $=function(s,c){return (c||ROOT).querySelector(s)}, $$=function(s,c){return Array.prototype.slice.call((c||ROOT).querySelectorAll(s))};
 
+  // ---- i18n: Spanish is the default (baked into the markup + JS). English turns on
+  //      automatically under /en (Webflow secondary locale), when <html lang="en">, or with ?lang=en. ----
+  var LANG = ( /^\/en(\/|$)/i.test(location.pathname)
+            || /^en\b/i.test(document.documentElement.getAttribute('lang')||'')
+            || /[?&]lang=en\b/i.test(location.search) ) ? 'en' : 'es';
+  var EN = {
+    brandAria:'Back to datatlan.tech',
+    s0_eyebrow:'Custom proposal',
+    s0_h:"Let's build your business's digital setup",
+    s0_sub:'Check the areas you want to get going. In a couple of minutes you build your package, and Datatlan sends back an assessment with a tailored quote.',
+    lbl_bizname:"What's your business called? <span class=\"req\">*</span>",
+    ph_bizname:'e.g. Luna Studio, Ana Nutrition, Sunflower Daycare',
+    lbl_bizsearch:'What does it do? <span class="req">*</span>',
+    ph_bizsearch:'Type your industry… e.g. yoga, nutrition, café',
+    listAria:'Suggested industries',
+    err_intro:'Fill in your business name and industry to continue.',
+    btn_start:'Get started',
+    s1_eyebrow:'Step 1 of 3 · Choose your areas',
+    s1_h:'What do you want to digitize?',
+    s1_sub:'Tap the areas you\'re interested in. For each, tell us whether we <b style="color:var(--azul-ink)">create it from scratch</b> or <b style="color:var(--teal-ink)">improve</b> what you already have.',
+    leg_create:'Create from scratch',
+    leg_improve:'Improve what exists',
+    btn_back:'Back',
+    btn_seepkg:'See my package',
+    s2_eyebrow:'Step 2 of 3 · Your package',
+    s2_sub:'This is what Datatlan would set up. We do the assessment and send you the personalized quote — no hidden prices.',
+    m_areas:'areas',
+    m_create:'create',
+    m_improve:'improve',
+    s2_note:'<b>Response within 24 business hours.</b> We review your selection, do the assessment, and send you a clear, tailored quote.',
+    lbl_cname:'Your name <span class="req">*</span>',
+    ph_cname:'Who do we have the pleasure of meeting?',
+    lbl_email:'Email <span class="req">*</span>',
+    ph_email:'you@email.com',
+    lbl_phone:'Phone <span class="opt">— optional</span>',
+    ladaAria:'Country code',
+    lbl_site:'Website or socials <span class="opt">— optional</span>',
+    ph_site:'yoursite.com or @your_business',
+    btn_edit:'Edit selection',
+    btn_request:'Request my quote',
+    s3_eyebrow:'Request received',
+    btn_restart:'Start over',
+    foot_back:'← Back to datatlan.tech',
+    foot_tag:'<b>Datatlan</b> — Digital Ecosystem for Your Company'
+  };
+  function L(o,f){ return LANG==='en' && o[f+'_en']!=null ? o[f+'_en'] : o[f]; }
+  function applyI18n(){
+    if(LANG!=='en') return;
+    $$('[data-i18n]').forEach(function(el){ var v=EN[el.getAttribute('data-i18n')]; if(v!=null) el.textContent=v; });
+    $$('[data-i18n-html]').forEach(function(el){ var v=EN[el.getAttribute('data-i18n-html')]; if(v!=null) el.innerHTML=v; });
+    $$('[data-i18n-ph]').forEach(function(el){ var v=EN[el.getAttribute('data-i18n-ph')]; if(v!=null) el.setAttribute('placeholder',v); });
+    $$('[data-i18n-aria]').forEach(function(el){ var v=EN[el.getAttribute('data-i18n-aria')]; if(v!=null) el.setAttribute('aria-label',v); });
+    $$('a[href="/"]').forEach(function(a){ a.setAttribute('href','/en'); });  // keep home links inside the locale
+    document.documentElement.setAttribute('lang','en');
+  }
+  applyI18n();
+
   // intro combobox — búsqueda de giro con texto libre
   (function initCombo(){
     var inp=$('#biz-search'), list=$('#biz-list'), hint=$('#biz-hint'), combo=$('#combo');
@@ -50,24 +107,27 @@
     function norm(s){s=(s||'').toLowerCase().normalize('NFD');var r='';for(var i=0;i<s.length;i++){var c=s.charCodeAt(i);if(c<768||c>879)r+=s[i];}return r;}
     function open(v){ list.classList.toggle('open', v); inp.setAttribute('aria-expanded', v?'true':'false'); if(!v) active=-1; }
     function close(){ open(false); }
-    function choose(val){ inp.value=val; state.type=val; hint.textContent='Giro: '+val; close(); }
+    function choose(val){ inp.value=val; state.type=val; hint.textContent=(LANG==='en'?'Industry: ':'Giro: ')+val; close(); }
     function render(){
       var raw=inp.value.trim(), q=norm(raw);
       visible = CATS.filter(function(c){
         if(!q) return true;
-        return norm(c.label).indexOf(q)>-1 || c.kw.some(function(k){return norm(k).indexOf(q)>-1;});
+        return norm(L(c,'label')).indexOf(q)>-1 || norm(c.label).indexOf(q)>-1
+            || c.kw.some(function(k){return norm(k).indexOf(q)>-1;})
+            || (c.kw_en||[]).some(function(k){return norm(k).indexOf(q)>-1;});
       });
       list.innerHTML='';
       visible.forEach(function(c){
+        var kws=(LANG==='en'?(c.kw_en||c.kw):c.kw);
         var o=document.createElement('div'); o.className='dt-opt'; o.setAttribute('role','option');
-        o.innerHTML='<b>'+c.label+'</b><span>'+c.kw.slice(0,4).join(' · ')+'…</span>';
-        o.addEventListener('mousedown', function(e){ e.preventDefault(); choose(c.label); });
+        o.innerHTML='<b>'+L(c,'label')+'</b><span>'+kws.slice(0,4).join(' · ')+'…</span>';
+        o.addEventListener('mousedown', function(e){ e.preventDefault(); choose(L(c,'label')); });
         list.appendChild(o);
       });
-      var exact = CATS.some(function(c){return norm(c.label)===q;});
+      var exact = CATS.some(function(c){return norm(L(c,'label'))===q || norm(c.label)===q;});
       if(raw && !exact){
         var n=document.createElement('div'); n.className='dt-optnew'; n.setAttribute('role','option');
-        n.innerHTML='Usar mi giro: <b>“'+raw+'”</b>';
+        n.innerHTML=(LANG==='en'?'Use my industry: ':'Usar mi giro: ')+'<b>“'+raw+'”</b>';
         n.addEventListener('mousedown', function(e){ e.preventDefault(); choose(raw); });
         list.appendChild(n);
       }
@@ -92,14 +152,16 @@
   var grid=$('#grid');
   ASPECTS.forEach(function(a){
     var el=document.createElement('div'); el.className='dt-aspect'; el.id='asp-'+a.id; el.tabIndex=0; el.setAttribute('role','button'); el.setAttribute('aria-pressed','false');
+    var tagTxt = a.group==='nucleo' ? (LANG==='en'?'Core':'Núcleo') : (LANG==='en'?'Module':'Módulo');
+    var createTxt = LANG==='en'?'Create':'Crear', improveTxt = LANG==='en'?'Improve':'Mejorar';
     el.innerHTML =
-      '<span class="dt-tag">'+(a.group==='nucleo'?'Núcleo':'Módulo')+'</span>'+
+      '<span class="dt-tag">'+tagTxt+'</span>'+
       '<span class="dt-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg></span>'+
       '<div class="dt-ahead"><div class="dt-ico">'+svg(a.icon)+'</div>'+
-      '<div><div class="dt-aname">'+a.name+'</div><div class="dt-adesc">'+a.desc+'</div></div></div>'+
-      '<div class="dt-seg" role="group" aria-label="Crear o mejorar '+a.name+'">'+
-        '<button type="button" class="dt-segbtn c" data-m="crear" aria-pressed="true"><span class="dot"></span>Crear</button>'+
-        '<button type="button" class="dt-segbtn m" data-m="mejorar" aria-pressed="false"><span class="dot"></span>Mejorar</button>'+
+      '<div><div class="dt-aname">'+L(a,'name')+'</div><div class="dt-adesc">'+L(a,'desc')+'</div></div></div>'+
+      '<div class="dt-seg" role="group" aria-label="'+(LANG==='en'?'Create or improve ':'Crear o mejorar ')+L(a,'name')+'">'+
+        '<button type="button" class="dt-segbtn c" data-m="crear" aria-pressed="true"><span class="dot"></span>'+createTxt+'</button>'+
+        '<button type="button" class="dt-segbtn m" data-m="mejorar" aria-pressed="false"><span class="dot"></span>'+improveTxt+'</button>'+
       '</div>';
     function toggle(){
       if(state.sel[a.id]){ delete state.sel[a.id]; el.classList.remove('sel','mejorar'); el.setAttribute('aria-pressed','false'); }
@@ -134,7 +196,11 @@
   function refresh(){
     var k=counts();
     var cnt=$('#count');
-    cnt.innerHTML = k.total? ('<b>'+k.total+'</b> '+(k.total===1?'frente elegido':'frentes elegidos')+' · '+k.crear+' por crear · '+k.mejorar+' por mejorar') : 'Aún no eliges frentes';
+    cnt.innerHTML = k.total
+      ? ( LANG==='en'
+          ? ('<b>'+k.total+'</b> '+(k.total===1?'area chosen':'areas chosen')+' · '+k.crear+' to create · '+k.mejorar+' to improve')
+          : ('<b>'+k.total+'</b> '+(k.total===1?'frente elegido':'frentes elegidos')+' · '+k.crear+' por crear · '+k.mejorar+' por mejorar') )
+      : (LANG==='en'?'No areas chosen yet':'Aún no eliges frentes');
     $('#go-2').disabled = k.total===0;
   }
 
@@ -156,25 +222,26 @@
         '<polygon points="'+(x-w/2)+','+y+' '+x+','+(y+h/2)+' '+x+','+(y+h/2+tierH)+' '+(x-w/2)+','+(y+tierH)+'" fill="'+left+'"/>'+
         '<polygon points="'+(x+w/2)+','+y+' '+x+','+(y+h/2)+' '+x+','+(y+h/2+tierH)+' '+(x+w/2)+','+(y+tierH)+'" fill="'+right+'"/></g>';
     }
-    if(n===0){ html='<text x="120" y="95" text-anchor="middle" fill="var(--slate)" font-family="var(--mono)" font-size="11">tu ecosistema aparecerá aquí</text>'; }
+    if(n===0){ html='<text x="120" y="95" text-anchor="middle" fill="var(--slate)" font-family="var(--mono)" font-size="11">'+(LANG==='en'?'your ecosystem will appear here':'tu ecosistema aparecerá aquí')+'</text>'; }
     s.innerHTML=html;
     $('#m-total').textContent=k.total; $('#m-crear').textContent=k.crear; $('#m-mejorar').textContent=k.mejorar;
   }
 
   function buildPackage(){
     var list=$('#pkg-list'); list.innerHTML='';
-    var title=$('#pkg-title'); title.textContent = state.name? ('Tu paquete de arranque, '+state.name) : 'Tu paquete de arranque';
+    var title=$('#pkg-title'); title.textContent = state.name? ((LANG==='en'?'Your starter package, ':'Tu paquete de arranque, ')+state.name) : (LANG==='en'?'Your starter package':'Tu paquete de arranque');
     ['nucleo','modulo'].forEach(function(g){
       var items=ASPECTS.filter(function(a){return state.sel[a.id] && a.group===g;});
       if(!items.length) return;
       var grp=document.createElement('div'); grp.className='dt-group';
-      grp.innerHTML='<p class="dt-gtitle">'+(g==='nucleo'?'Núcleo':'Módulos')+'</p>';
+      var gtitle = g==='nucleo' ? (LANG==='en'?'Core':'Núcleo') : (LANG==='en'?'Modules':'Módulos');
+      grp.innerHTML='<p class="dt-gtitle">'+gtitle+'</p>';
       items.forEach(function(a,idx){
         var mode=state.sel[a.id];
         var row=document.createElement('div'); row.className='dt-tier'; row.style.animationDelay=(idx*0.05)+'s';
         row.innerHTML='<div class="dt-ico" '+(mode==='mejorar'?'style="background:linear-gradient(140deg,var(--teal-wash),color-mix(in srgb,var(--teal) 26%, var(--teal-wash)));color:var(--teal-ink)"':'')+'>'+svg(a.icon)+'</div>'+
-          '<div class="dt-tname">'+a.name+'</div>'+
-          '<span class="dt-mode '+mode+'">'+(mode==='mejorar'?'Mejorar':'Crear')+'</span>';
+          '<div class="dt-tname">'+L(a,'name')+'</div>'+
+          '<span class="dt-mode '+mode+'">'+(mode==='mejorar'?(LANG==='en'?'Improve':'Mejorar'):(LANG==='en'?'Create':'Crear'))+'</span>';
         grp.appendChild(row);
       });
       list.appendChild(grp);
@@ -187,14 +254,18 @@
     ASPECTS.filter(function(a){return state.sel[a.id]}).forEach(function(a){
       var mode=state.sel[a.id];
       var c=document.createElement('span'); c.className='dt-rchip';
-      c.innerHTML='<span class="dot '+mode+'"></span>'+a.name;
+      c.innerHTML='<span class="dot '+mode+'"></span>'+L(a,'name');
       r.appendChild(c);
     });
     var k=counts();
     var gn=(state.cname||'').split(' ')[0];
-    $('#done-title').textContent = gn? ('¡Listo, '+gn+'!') : '¡Listo! Estamos preparando tu diagnóstico';
-    var dest = state.email? (' a '+state.email) : '';
-    $('#done-sub').textContent = 'Datatlan revisará tus '+k.total+' '+(k.total===1?'frente':'frentes')+' y te enviará una cotización personalizada'+dest+' en menos de 24 h hábiles.';
+    $('#done-title').textContent = gn
+      ? ((LANG==='en'?'All set, ':'¡Listo, ')+gn+'!')
+      : (LANG==='en'?"All set! We're preparing your assessment":'¡Listo! Estamos preparando tu diagnóstico');
+    var dest = state.email? ((LANG==='en'?' to ':' a ')+state.email) : '';
+    $('#done-sub').textContent = LANG==='en'
+      ? ('Datatlan will review your '+k.total+' '+(k.total===1?'area':'areas')+' and send you a custom quote'+dest+' within 24 business hours.')
+      : ('Datatlan revisará tus '+k.total+' '+(k.total===1?'frente':'frentes')+' y te enviará una cotización personalizada'+dest+' en menos de 24 h hábiles.');
   }
 
   // resumen de frentes elegidos, p.ej. "Sitio web (crear), Reservas y citas (mejorar)"
@@ -259,13 +330,15 @@
     mark($('#cname'), !!nm); if(!nm) ok=false;
     mark($('#email'), emOk); if(!emOk) ok=false;
     var pe=$('#pkg-err');
-    pe.textContent = (!nm && !emOk) ? 'Escribe tu nombre y un correo válido.' : (!nm ? 'Escribe tu nombre.' : 'Escribe un correo válido.');
+    pe.textContent = (!nm && !emOk)
+      ? (LANG==='en'?'Enter your name and a valid email.':'Escribe tu nombre y un correo válido.')
+      : (!nm ? (LANG==='en'?'Enter your name.':'Escribe tu nombre.') : (LANG==='en'?'Enter a valid email.':'Escribe un correo válido.'));
     pe.style.display = ok?'none':'block';
     if(!ok){ (!nm?$('#cname'):$('#email')).focus(); return; }
     state.cname=nm; state.email=em; state.phone=$('#phone').value.trim(); state.lada=ladaSel.value; state.site=$('#site').value.trim();
     var btn=this;
     submitLead(btn, function(sent){
-      if(sent===false){ pe.textContent='No pudimos enviar tu solicitud. Reintenta en un momento.'; pe.style.display='block'; return; }
+      if(sent===false){ pe.textContent=(LANG==='en'?"We couldn't send your request. Please try again in a moment.":'No pudimos enviar tu solicitud. Reintenta en un momento.'); pe.style.display='block'; return; }
       buildRecap(); show(3);
     });
   };
