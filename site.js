@@ -9,6 +9,7 @@
  *    1. Fade-in on scroll + contact button feedback
  *    2. Mobile accordions (pain cards + toolkit) + hero isometric background
  *    3. Multi-step contact modal (v4)
+ *    4. AI assistant (Motor Datatlan), in testing behind ?bot=1
  */
 
 
@@ -111,3 +112,21 @@ return true;
 }
 if(!mountInline()){var mt=0,mi=setInterval(function(){mt++;if(mountInline()||mt>40)clearInterval(mi)},150);}
 });
+
+
+/* ====================================================================
+   4. AI assistant (Motor Datatlan) - in testing, hidden behind ?bot=1
+   ?bot=1 turns it on in this browser, ?bot=0 turns it off.
+   To show it to every visitor, set DT_BOT_PUBLIC to true.
+   Loads after the page is idle so it never competes with the hero animation.
+   ==================================================================== */
+(function(){
+var DT_BOT_PUBLIC=false;
+var SRC='https://datatlan-motor.datatlan.workers.dev/widget.js?t=datatlan';
+var on=DT_BOT_PUBLIC;
+try{var q=new URLSearchParams(location.search).get('bot');if(q==='1')localStorage.setItem('dt-bot','1');if(q==='0')localStorage.removeItem('dt-bot');if(localStorage.getItem('dt-bot')==='1')on=true}catch(e){}
+if(!on)return;
+function load(){var s=document.createElement('script');s.src=SRC;s.defer=true;document.body.appendChild(s)}
+function idle(){if('requestIdleCallback' in window)requestIdleCallback(load,{timeout:3000});else setTimeout(load,1500)}
+if(document.readyState==='complete')idle();else window.addEventListener('load',idle);
+})();
